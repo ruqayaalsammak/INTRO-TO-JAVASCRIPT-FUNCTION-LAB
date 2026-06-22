@@ -30,7 +30,12 @@ Example: isAdult(21) should return 'Adult'.
 Complete the exercise in the space below:
 */
 function isAdult(age) {
-    return 'isAdult(' + age + ')';
+    if(age>=18){
+        return 'adult'
+    }
+    else{
+        return 'minor'
+    }
 }
 console.log('Exercise 2 Result:', isAdult(21));
 
@@ -48,10 +53,14 @@ Example: isCharAVowel('a') should return true.
 Complete the exercise in the space below:
 */
 function isCharAVowel(char) {
-    return char;
+     if(char==='a' ||char==='e' || char==='o' || char==='i' || char==='u'){
+    return 'vowel';}
+else {
+    return 'constant'
+}
 }
 
-console.log('Exercise 3 Result:', isCharAVowel("a"));
+console.log('Exercise 3 Result:', isCharAVowel("z"));
 
 
 /*
@@ -124,7 +133,7 @@ Example: calculateTip(50, 20) should return 10.
 Complete the exercise in the space below:
 */
 function calculateTip(billAmount, tipPercentage) {
-    return billAmount + ',' + tipPercentage;
+    return billAmount * (tipPercentage/100);
 
 }
 
@@ -146,8 +155,16 @@ Example: convertTemperature(32, 'F') should return 0 (Celsius).
 Complete the exercise in the space below:
 */
 function convertTemperature(temp, scale) {
-    return temp;
+    if (scale === 'C') {
+        return (temp * 9 / 5) + 32;
+    } else if (scale === 'F') {
+        return (temp - 32) * 5 / 9;
+    } else {
+        return "Invalid scale"
+    }
 }
+    
+
     
 
 console.log('Exercise 8 Result:', convertTemperature(32, "C"));
@@ -169,6 +186,16 @@ Example: basicCalculator(10, 5, 'subtract') should return 5.
 Complete the exercise in the space below:
 */
 function basicCalculator(num1, num2, operation) {
-    return '(' + num1 + ',' + num2 + ',"' + operation + '")'
+    if (operation === 'add') {
+        return num1 + num2;
+    } else if (operation === 'subtract') {
+        return num1 - num2;
+    } else if (operation === 'multiply') {
+        return num1 * num2;
+    } else if (operation === 'divide') {
+        return num1 / num2;
+    } else {
+        return "Invalid operation";
+    }
 }
 console.log('Exercise 9 Result:', basicCalculator(10, 5, "subtract"));
